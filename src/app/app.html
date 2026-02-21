@@ -1,26 +1,26 @@
-<nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#">
-        <span class="title is-4 purple-glow" style="font-family: 'Orbitron'; letter-spacing: 2px;">DOG STYLE</span>
+      <a class="navbar-item" routerLink="/" (click)="closeNavbar()">
+        <span class="title is-4 purple-glow" style="font-family: 'Montserrat'; font-weight: 700; letter-spacing: 1px;">DOG STYLE</span>
       </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" (click)="toggleNavbar()">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" (click)="toggleNavbar()" [class.is-active]="isNavbarActive">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu" [class.is-active]="isNavbarActive" style="background: rgba(0,0,0,0.95);">
+    <div id="navbarBasicExample" class="navbar-menu" [class.is-active]="isNavbarActive">
       <div class="navbar-end">
-        <a class="navbar-item is-uppercase" href="#services">Послуги</a>
-        <a class="navbar-item is-uppercase" href="#prices">Прайс</a>
-        <a class="navbar-item is-uppercase" href="#training">Навчання</a>
-        <a class="navbar-item is-uppercase" href="#shop">Магазин</a>
-        <a class="navbar-item is-uppercase" href="#gallery">Галерея</a>
+        <a class="navbar-item is-uppercase" routerLink="/" fragment="services" (click)="closeNavbar()" style="font-weight: 500;">Послуги</a>
+        <a class="navbar-item is-uppercase" routerLink="/" fragment="prices" (click)="closeNavbar()" style="font-weight: 500;">Прайс</a>
+        <a class="navbar-item is-uppercase" routerLink="/academy" routerLinkActive="pink-glow" (click)="closeNavbar()" style="font-weight: 500;">Академія</a>
+        <a class="navbar-item is-uppercase" routerLink="/shop" routerLinkActive="pink-glow" (click)="closeNavbar()" style="font-weight: 500;">Маркет</a>
+        <a class="navbar-item is-uppercase" routerLink="/" fragment="gallery" (click)="closeNavbar()" style="font-weight: 500;">Галерея</a>
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button hi-tech-button" href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank">Записатись</a>
+            <a class="button hi-tech-button" href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank" style="padding: 0.5rem 1.5rem; font-size: 0.85rem; height: auto;">Записатись</a>
           </div>
         </div>
       </div>
@@ -28,219 +28,18 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero is-fullheight is-black" style="background: radial-gradient(circle at center, #1a1a1e 0%, #0d0d0f 100%);">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <div class="mb-6">
-        <span class="tag is-outline is-medium is-rounded" style="background: transparent; border: 1px solid #7c7bad; color: #7c7bad;">ПРОФЕСІЙНИЙ ДОГЛЯД</span>
-      </div>
-      <h1 class="title is-1 glow-text pink-glow" style="font-size: 4rem; margin-bottom: 2rem;">
-        DOG STYLE
-      </h1>
-      <h2 class="subtitle is-4 purple-glow mb-6" style="font-family: 'Montserrat'; font-weight: 400; letter-spacing: 1px;">
-        Ваш улюбленець у надійних руках
-      </h2>
-      <div class="buttons is-centered">
-        <a href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank" class="button is-large hi-tech-button">Записатись через Instagram</a>
-        <a href="#prices" class="button is-large is-outlined" style="border-radius: 8px; font-family: 'Montserrat'; margin-left: 1rem; border-color: #5a588a;">Послуги</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-foot has-text-centered pb-5">
-    <i class="fas fa-chevron-down pink-glow fa-2x bounce"></i>
-  </div>
-</section>
-
-<!-- Services List -->
-<section id="services" class="section">
-  <div class="container">
-    <h2 class="title section-title pink-glow">Наші Послуги</h2>
-    <div class="columns is-multiline">
-      <div class="column is-4">
-        <div class="hi-tech-card h-100" style="border-left: 4px solid #7c7bad;">
-          <h3 class="title is-4 purple-glow mb-5">Екосистема догляду</h3>
-          <ul class="is-size-5">
-            <li *ngFor="let feature of serviceFeatures" class="mb-3">
-              <i class="fas fa-check-circle pink-glow mr-3" style="font-size: 0.8rem;"></i> {{feature}}
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="column is-8">
-        <div class="hi-tech-card h-100">
-          <h3 class="title is-4 pink-glow mb-5">Протокол безпеки та якості</h3>
-          <div class="columns is-multiline">
-            <div class="column is-6" *ngFor="let term of serviceTerms">
-              <div class="notification is-dark" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(124, 123, 173, 0.2);">
-                <i class="fas fa-shield-alt purple-glow mb-3 is-size-4"></i>
-                <p>{{term}}</p>
-              </div>
-            </div>
-            <div class="column is-12">
-               <div class="notification" style="background: linear-gradient(90deg, #7c7bad, #5a588a); color: white; border: none;">
-                 <i class="fas fa-gift mr-2"></i> <strong>Подарункові сертифікати</strong> — ідеальний подарунок для Ваших друзів та їх улюбленців.
-               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Detailed Price List -->
-<section id="prices" class="section">
-  <div class="container">
-    <h2 class="title section-title purple-glow">Прайс-Лист</h2>
-    
-    <div class="columns is-multiline">
-      <div class="column is-6">
-        <div class="hi-tech-card">
-          <div class="is-flex is-justify-content-space-between is-align-items-center mb-5">
-            <h3 class="title is-4 pink-glow m-0">Малі породи</h3>
-            <i class="fas fa-dog fa-2x purple-glow"></i>
-          </div>
-          <table class="table is-fullwidth is-transparent">
-            <thead>
-              <tr>
-                <th>Порода / Категорія</th>
-                <th class="has-text-right">Ціна (грн)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of dogPrices">
-                <td>{{item.breed}} <span style="font-weight: bold; opacity: 0.9;">({{item.weight}})</span></td>
-                <td class="has-text-right pink-glow has-text-weight-bold">{{item.price}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="column is-6">
-        <div class="hi-tech-card mb-5">
-           <div class="is-flex is-justify-content-space-between is-align-items-center mb-5">
-            <h3 class="title is-4 pink-glow m-0">Середні та великі</h3>
-            <i class="fas fa-paw fa-2x purple-glow"></i>
-          </div>
-          <table class="table is-fullwidth is-transparent">
-            <tbody>
-              <tr *ngFor="let item of mediumBreeds">
-                <td>{{item.breed}}</td>
-                <td class="has-text-right pink-glow">{{item.price}}</td>
-              </tr>
-              <tr *ngFor="let item of largeBreeds">
-                <td>{{item.breed}}</td>
-                <td class="has-text-right pink-glow">{{item.price}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="hi-tech-card">
-          <div class="is-flex is-justify-content-space-between is-align-items-center mb-5">
-            <h3 class="title is-4 pink-glow m-0">Котики</h3>
-            <i class="fas fa-cat fa-2x purple-glow"></i>
-          </div>
-          <table class="table is-fullwidth is-transparent">
-            <tbody>
-              <tr *ngFor="let item of catPrices">
-                <td>{{item.service}}</td>
-                <td class="has-text-right pink-glow">{{item.price}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="column is-12">
-        <div class="hi-tech-card">
-          <h3 class="title is-4 purple-glow mb-5 has-text-centered">Додаткові опції</h3>
-          <div class="columns is-multiline">
-            <div class="column is-4" *ngFor="let service of additionalServices">
-              <div class="box" style="background: rgba(0,0,0,0.4); border: 1px solid rgba(226, 164, 180, 0.2); border-radius: 15px;">
-                <p class="mb-2">{{service.name}}</p>
-                <p class="pink-glow is-size-4 has-text-weight-bold">{{service.price}} грн</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Training Section -->
-<section id="training" class="section">
-  <div class="container">
-    <h2 class="title section-title pink-glow">Академія Грумінгу</h2>
-    <div class="hi-tech-card" style="max-width: 1000px; margin: 0 auto; border-top: 4px solid #7c7bad;">
-      <div class="columns is-vcentered">
-        <div class="column is-6 has-text-centered">
-          <h3 class="title is-2 purple-glow mb-4">ВІДКРИТО НАБІР</h3>
-          <p class="is-size-4 pink-glow mb-5" style="font-family: 'Orbitron';">Побудуй кар'єру майбутнього</p>
-          <div class="notification is-dark" style="background: rgba(0,0,0,0.5);">
-             90% практичних занять на реальних моделях
-          </div>
-        </div>
-        <div class="column is-6">
-          <ul class="is-size-5 mb-5">
-            <li *ngFor="let item of trainingFeatures" class="mb-3">
-              <i class="fas fa-bolt pink-glow mr-3"></i> {{item}}
-            </li>
-          </ul>
-          <a href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank" class="button hi-tech-button is-fullwidth is-large">Отримати консультацію</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Shop Section -->
-<section id="shop" class="section">
-  <div class="container">
-    <h2 class="title section-title purple-glow">Маркет Догляду</h2>
-    <div class="columns is-multiline">
-      <div class="column is-4" *ngFor="let product of shopProducts">
-        <div class="hi-tech-card h-100">
-          <div class="icon-text mb-4">
-            <span class="icon pink-glow">
-              <i class="fas fa-shopping-bag fa-lg"></i>
-            </span>
-            <span class="title is-5 pink-glow ml-2">{{product.name}}</span>
-          </div>
-          <p>{{product.description}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Gallery Section -->
-<section id="gallery" class="section">
-  <div class="container">
-    <h2 class="title section-title pink-glow">Галерея Робіт</h2>
-    <div class="columns is-multiline">
-      <div class="column is-3" *ngFor="let img of gallery">
-        <div class="hi-tech-card" style="padding: 0; border: none; overflow: hidden;">
-          <figure class="image is-square">
-            <img [src]="img" alt="Dog Style Work" style="border-radius: 16px; object-fit: cover; transition: all 0.5s ease;" class="gallery-img">
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<main style="min-height: 100vh;">
+  <router-outlet></router-outlet>
+</main>
 
 <!-- Footer -->
-<footer class="footer has-background-black has-text-white mt-6" style="border-top: 2px solid #7c7bad;">
+<footer class="footer has-background-white" style="border-top: 1px solid rgba(142, 141, 183, 0.1); background: linear-gradient(180deg, #ffffff 0%, #f9f9fb 100%);">
   <div class="container">
     <div class="columns">
       <div class="column is-4">
-        <h3 class="title is-4 purple-glow mb-5" style="font-family: 'Orbitron';">DOG STYLE</h3>
-        <p class="is-size-5 pink-glow mb-4">Любов. Якість. Турбота.</p>
-        <p>Ми використовуємо передові технології догляду, щоб Ваш улюбленець відчував себе в майбутньому вже сьогодні.</p>
+        <h3 class="title is-4 purple-glow mb-5" style="font-family: 'Montserrat'; font-weight: 700;">DOG STYLE</h3>
+        <p class="is-size-5 pink-glow mb-4" style="font-weight: 600;">Любов. Якість. Турбота.</p>
+        <p style="opacity: 0.8;">Ми використовуємо передові технології догляду, щоб Ваш улюбленець відчував себе щасливим та доглянутим.</p>
       </div>
       <div class="column is-4">
         <h4 class="title is-5 pink-glow mb-5">Локації</h4>
@@ -251,20 +50,20 @@
       <div class="column is-4">
         <h4 class="title is-5 pink-glow mb-5">Зв'язок</h4>
         <div class="buttons">
-          <a class="button is-dark" href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank">
+          <a class="button is-light" href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank" style="border-radius: 12px; background: rgba(212, 138, 156, 0.15); border: none;">
             <i class="fab fa-instagram fa-lg pink-glow"></i>
           </a>
-          <a class="button is-dark" href="https://www.threads.com/@dog_style25?xmt=AQF0z-FShNzUqB4Ejq0tvdcpxL-7fuUBaIfWsc1Ul3qzhDE" target="_blank">
+          <a class="button is-light" href="https://www.threads.com/@dog_style25?xmt=AQF0z-FShNzUqB4Ejq0tvdcpxL-7fuUBaIfWsc1Ul3qzhDE" target="_blank" style="border-radius: 12px; background: rgba(142, 141, 183, 0.15); border: none;">
             <i class="fab fa-threads fa-lg pink-glow"></i>
           </a>
-          <a class="button is-dark" href="https://maps.app.goo.gl/g47PYmhdZATi3V2r6" target="_blank">
+          <a class="button is-light" href="https://maps.app.goo.gl/g47PYmhdZATi3V2r6" target="_blank" style="border-radius: 12px; background: rgba(142, 141, 183, 0.15); border: none;">
             <i class="fas fa-map-marked-alt fa-lg pink-glow"></i>
           </a>
         </div>
       </div>
     </div>
-    <div class="content has-text-centered mt-6 pt-5" style="border-top: 1px solid rgba(255,255,255,0.1);">
-      <p>© 2026 Dog Style Grooming Salon. Кам'янець-Подільський.</p>
+    <div class="content has-text-centered mt-6 pt-5" style="border-top: 1px solid rgba(0,0,0,0.05);">
+      <p style="opacity: 0.6;">© 2026 Dog Style Grooming Salon. Кам'янець-Подільський.</p>
     </div>
   </div>
 </footer>

@@ -1,103 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
 export class App {
   isNavbarActive = false;
 
-  dogPrices = [
-    { breed: 'Йоркширський тер\'єр', weight: '2-2,5 кг', price: '600-700' },
-    { breed: 'Мальтійська болонка', weight: '2-2,5 кг', price: '600-700' },
-    { breed: 'Мальтіпу', weight: '2,5-3 кг', price: '700-800' },
-    { breed: 'Ши-тцу', weight: '2,5-3 кг', price: '650-800' },
-    { breed: 'Шпіц', weight: '2-3 кг', price: '650-800' },
-    { breed: 'Бішон фрізе', weight: '3-3,5 кг', price: '650-800' },
-    { breed: 'Той-пудель', weight: '3-3,5 кг', price: '650-800' },
-    { breed: 'Французький бульдог', weight: '2 кг', price: '550-650' },
-    { breed: 'Мопс', weight: '2 кг', price: '550-650' },
-    { breed: 'Пекінес', weight: '2-2,5 кг', price: '650-750' },
-    { breed: 'Чіхуа-хуа', weight: '2 кг', price: '600-650' }
-  ];
-
-  mediumBreeds = [
-    { breed: 'Спанієль спортивна', weight: '2-2,5 кг', price: '800' },
-    { breed: 'Спанієль породна', weight: '2,5-3,5 кг', price: '900' },
-    { breed: 'Коргі', weight: '2-2,5 кг', price: '800-950' },
-    { breed: 'Кавалер кінг', weight: '2-2,5 кг', price: '900' }
-  ];
-
-  largeBreeds = [
-    { breed: 'Самоїдська лайка', weight: '3-3,5 кг', price: '1100-1500' },
-    { breed: 'Хаскі', weight: '2,5-3 кг', price: '900-1100' },
-    { breed: 'Акіта', weight: '2,5-3 кг', price: '900-1200' },
-    { breed: 'Чау-чау', weight: '3-3,5 кг', price: '1300-1500' },
-    { breed: 'Вівчарка', weight: '2-2,5 кг', price: '1000-1200' }
-  ];
-
-  catPrices = [
-    { service: 'Стрижка кота «Лев» без купання', price: '550-650' },
-    { service: 'Стрижка з купанням', price: '+150 до основної ціни' },
-    { service: 'Експрес-линька без купання', price: '600-650' },
-    { service: 'Експрес-линька з купанням', price: '+150 до основної ціни' }
-  ];
-
-  additionalServices = [
-    { name: 'Підрізання кігтів для великих порід (+заточка)', price: '100' },
-    { name: 'Підрізання кігтів для малих та середніх порід (+заточка)', price: '60' },
-    { name: 'Підрізання кігтів для котиків', price: '35' }
-  ];
-
-  serviceFeatures = [
-    'Стрижки великих, середніх та малих порід.',
-    'Стрижка котиків та вичісування.',
-    'Купання та сушка.',
-    'Стрижка (гігієнічна, модельна, по породі).',
-    'Підрізання кігтів.',
-    'Чистка вух та промивання очей.',
-    'SPA догляд.',
-    'Видалення ковтунів.',
-    'Експрес-линька.',
-    'Ніякого наркозу чи седативних препаратів.',
-    'Сертифікований майстер.',
-    'Завжди стерильні інструменти, стіл, ванна та приміщення.'
-  ];
-
-  serviceTerms = [
-    'Агресивних тварин на процедури не беремо',
-    'Наявність бліх та паразитів не припустимо',
-    'Тварина має стояти на обліку у ветеринара та проходити щорічну вакцинацію'
-  ];
-
-  trainingFeatures = [
-    'навчання з нуля',
-    'багато практики на моделях',
-    'індивідуальний підхід',
-    'підтримка після навчання',
-    'сертифікат по завершенню курсу'
-  ];
-
-  shopProducts = [
-    { name: 'Маска Iv San Bernard (маракуя)', description: 'Відновник структури та текстури шерсті. З протеїнами для довгої шерсті.' },
-    { name: 'Лосьйон для вушок', description: 'Для щоденного догляду та чистоти.' },
-    { name: 'Лосьйон від слизових доріжок', description: 'Ефективне очищення зони навколо очей.' },
-    { name: 'Спрей для легкого розчісування', description: 'Полегшує догляд за шерстю та запобігає ковтунам.' },
-    { name: 'Бантики', description: 'Великий вибір кольорів та фасонів для Ваших пухнастиків.' },
-    { name: 'Професійні шампуні та кондиціонери', description: 'Перевірені продукти, якими ми користуємось самі.' },
-    { name: 'Розчіски та гребінці', description: 'Для якісного домашнього догляду.' }
-  ];
-
-  gallery = [
-    '/image/1.jpg', '/image/2.jpg', '/image/3.jpg', '/image/4.jpg', '/image/5.jpg',
-    '/image/6.jpg', '/image/7.jpg', '/image/8.jpg', '/image/9.jpg', '/image/10.jpg'
-  ];
-
   toggleNavbar() {
     this.isNavbarActive = !this.isNavbarActive;
+  }
+
+  closeNavbar() {
+    this.isNavbarActive = false;
   }
 }

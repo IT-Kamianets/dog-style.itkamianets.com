@@ -1,18 +1,20 @@
-// Custom variables (More calm & elegant palette)
-$primary: #7c7bad; // Muted Lavender/Blue
-$secondary: #5a588a; // Dark Slate Blue
-$link: #e2a4b4; // Dusty Rose
-$black: #121214;
-$dark: #1a1a1e;
-$text: #ffffff; // Set global text color to pure white
-$background: #0d0d0f;
+// Custom variables (Soft & Clean Instagram-inspired palette)
+$primary: #8e8db7; // Soft Lavender
+$secondary: #6a689a; // Muted Purple
+$link: #d48a9c; // Soft Rose/Pink
+$black: #2c2c2e;
+$dark: #4a4a4a;
+$text: #363636; // Dark text for light background
+$background: #ffffff;
+$light-bg: #fdfbfb;
 
 // Update Bulma's global variables
 $family-sans-serif: 'Montserrat', sans-serif;
-$title-color: $link; // Titles will use the pink color
-$subtitle-color: $primary; // Subtitles will use the lavender color
+$title-color: $secondary; 
+$subtitle-color: $primary;
 $body-background-color: $background;
-$body-color: $text; // Bulma body color is now white
+$body-color: $text;
+$link: $link;
 
 // Import FontAwesome
 @import "@fortawesome/fontawesome-free/css/all.css";
@@ -20,25 +22,25 @@ $body-color: $text; // Bulma body color is now white
 // Import Bulma
 @import "bulma/bulma";
 
-// HI-TECH 3.0 - Calm & Professional
+// SOFT STYLE - Light & Elegant
 body {
     background: $background;
     background-image: 
-        radial-gradient(at 0% 0%, rgba(124, 123, 173, 0.08) 0, transparent 50%), 
-        radial-gradient(at 100% 100%, rgba(226, 164, 180, 0.05) 0, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(142, 141, 183, 0.05) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, rgba(212, 138, 156, 0.05) 0, transparent 50%);
     background-attachment: fixed;
     min-height: 100vh;
-    color: #ffffff; // Explicit white for body
+    color: $text;
 }
 
-// Ensure all non-heading text is white
+// Ensure text readability
 p, span, li, td, th, div, a:not(.title):not(.subtitle) {
-    color: #ffffff;
+    color: $text;
 }
 
 // Preserve Heading colors
 .title, .section-title {
-    color: $primary !important;
+    color: $secondary !important;
     &.pink-glow { color: $link !important; }
     &.purple-glow { color: $primary !important; }
 }
@@ -50,52 +52,54 @@ p, span, li, td, th, div, a:not(.title):not(.subtitle) {
 }
 
 .glow-text {
-    text-shadow: 0 0 10px rgba(226, 164, 180, 0.3);
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 3px;
+    text-shadow: 0 2px 10px rgba(212, 138, 156, 0.2);
+    font-family: 'Montserrat', sans-serif; // Changed from Orbitron to Montserrat for softer look
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .hi-tech-card {
-    background: rgba(26, 26, 30, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(124, 123, 173, 0.15);
-    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid rgba(142, 141, 183, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
     padding: 25px;
     transition: all 0.3s ease-out;
-    color: #ffffff;
+    color: $text;
     
     &:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        border-color: rgba(226, 164, 180, 0.4);
+        box-shadow: 0 15px 35px rgba(142, 141, 183, 0.1);
+        border-color: rgba(212, 138, 156, 0.3);
     }
 }
 
 .hi-tech-button {
-    background: transparent;
-    border: 1.5px solid $primary;
-    color: #ffffff !important; // Button text remains white
+    background: linear-gradient(135deg, $primary, $link);
+    border: none;
+    color: #ffffff !important;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 0.8rem 2.2rem;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     display: inline-block;
+    box-shadow: 0 4px 15px rgba(212, 138, 156, 0.3);
     
     &:hover {
-        background: $primary;
-        color: #fff !important;
-        box-shadow: 0 5px 15px rgba(124, 123, 173, 0.3);
-        border-color: $primary;
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(212, 138, 156, 0.4);
+        opacity: 0.9;
     }
 }
 
 .section-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     margin-bottom: 4rem;
     text-align: center;
     
@@ -104,9 +108,10 @@ p, span, li, td, th, div, a:not(.title):not(.subtitle) {
         display: block;
         margin: 15px auto 0;
         width: 60px;
-        height: 2px;
-        background: $link;
-        opacity: 0.5;
+        height: 3px;
+        background: linear-gradient(90deg, $primary, $link);
+        border-radius: 2px;
+        opacity: 0.6;
     }
 }
 
@@ -120,23 +125,25 @@ p, span, li, td, th, div, a:not(.title):not(.subtitle) {
 
 .table.is-transparent {
     background-color: transparent;
-    color: #ffffff;
+    color: $text;
     
     td, th {
-        border-bottom: 1px solid rgba(124, 123, 173, 0.1);
-        color: #ffffff !important;
+        border-bottom: 1px solid rgba(142, 141, 183, 0.1);
+        color: $text !important;
         padding: 12px 8px;
     }
     
     thead th {
-        color: $link !important; // Keep header pink for contrast
-        font-family: 'Orbitron', sans-serif;
-        font-size: 0.75rem;
+        color: $link !important;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
     }
 }
 
 // Custom Scrollbar
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: $black; }
-::-webkit-scrollbar-thumb { background: rgba(124, 123, 173, 0.3); border-radius: 10px; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: $light-bg; }
+::-webkit-scrollbar-thumb { background: rgba(142, 141, 183, 0.3); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: $primary; }

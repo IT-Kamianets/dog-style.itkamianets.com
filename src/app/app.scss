@@ -3,36 +3,38 @@ html {
 }
 
 section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
 .navbar {
-    border-bottom: 1px solid rgba(124, 123, 173, 0.2);
-    backdrop-filter: blur(15px);
-    background: rgba(0, 0, 0, 0.8) !important;
+    border-bottom: 1px solid rgba(142, 141, 183, 0.1);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.9) !important;
     padding: 0.5rem 0;
+    transition: all 0.3s ease;
 }
 
 .navbar-item {
-    color: #ffffff !important; // Maximum brightness for navbar
-    font-family: 'Orbitron', sans-serif;
+    color: #363636 !important; 
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
 
     &:hover {
-        color: #e2a4b4 !important;
+        color: #d48a9c !important;
         background-color: transparent !important;
-        text-shadow: 0 0 10px rgba(226, 164, 180, 0.5);
     }
 }
 
 .gallery-img {
     cursor: pointer;
+    border-radius: 20px;
     &:hover {
-        transform: scale(1.08);
-        filter: brightness(1.1);
+        transform: scale(1.05);
+        filter: brightness(1.05);
     }
 }
 
@@ -51,10 +53,12 @@ section {
 @media screen and (max-width: 1024px) {
     .navbar-menu {
         padding: 2rem;
-        background: rgba(0,0,0,0.95) !important;
+        background: #ffffff !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         .navbar-item {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
+            color: #363636 !important;
         }
     }
 }

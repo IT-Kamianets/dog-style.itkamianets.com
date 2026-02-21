@@ -1,0 +1,58 @@
+<!-- Shop Page Content -->
+<section class="hero is-medium" style="background: radial-gradient(circle at 80% 30%, rgba(212, 138, 156, 0.15) 0%, transparent 40%), #ffffff; padding-top: 4rem;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 purple-glow" style="font-family: 'Montserrat'; font-weight: 700; margin-bottom: 1.5rem;">Маркет Догляду</h1>
+      <p class="subtitle is-4 pink-glow" style="max-width: 800px; margin: 0 auto;">Професійна косметика та інструменти, якими ми користуємося в нашому салоні</p>
+    </div>
+  </div>
+</section>
+
+<section id="shop" class="section" style="position: relative; background: #ffffff; min-height: 80vh; padding-top: 2rem;">
+   <div style="position: absolute; top: 20%; right: 10%; width: 150px; height: 150px; background: rgba(212, 138, 156, 0.08); border-radius: 50%; filter: blur(40px); z-index: 0;"></div>
+  <div class="container" style="position: relative; z-index: 1;">
+    <div class="columns is-multiline">
+      <div class="column is-4" *ngFor="let product of shopProducts">
+        <div class="hi-tech-card h-100" style="background: #ffffff; border-bottom: 4px solid rgba(212, 138, 156, 0.2); transition: all 0.3s ease;">
+          <div class="icon-text mb-4">
+            <span class="icon pink-glow">
+              <i class="fas fa-shopping-bag fa-lg"></i>
+            </span>
+            <span class="title is-5 purple-glow ml-2" style="font-weight: 700;">{{product.name}}</span>
+          </div>
+          <p style="opacity: 0.9; margin-bottom: 1.5rem; min-height: 3rem;">{{product.description}}</p>
+          <a href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank" class="button is-small is-outlined" style="border-radius: 8px; border-color: #d48a9c; color: #d48a9c; width: 100%;">Дізнатись наявність</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Additional Info Section -->
+<section class="section" style="background: #fdfbfb;">
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-4">
+        <div class="notification is-white has-text-centered p-5" style="border: 1px solid rgba(142, 141, 183, 0.1); border-radius: 15px;">
+          <i class="fas fa-truck fa-2x pink-glow mb-4"></i>
+          <h5 class="title is-5 purple-glow">Доставка</h5>
+          <p>Можлива відправка Новою Поштою або самовивіз з нашого салону.</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="notification is-white has-text-centered p-5" style="border: 1px solid rgba(142, 141, 183, 0.1); border-radius: 15px;">
+          <i class="fas fa-check-double fa-2x pink-glow mb-4"></i>
+          <h5 class="title is-5 purple-glow">Оригінальність</h5>
+          <p>Всі товари є оригінальними та сертифікованими брендами (Iv San Bernard тощо).</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="notification is-white has-text-centered p-5" style="border: 1px solid rgba(142, 141, 183, 0.1); border-radius: 15px;">
+          <i class="fas fa-hand-holding-heart fa-2x pink-glow mb-4"></i>
+          <h5 class="title is-5 purple-glow">Поради</h5>
+          <p>Наші майстри допоможуть вам підібрати ідеальний догляд саме для вашого улюбленця.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
