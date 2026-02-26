@@ -3,6 +3,7 @@ import { provideRouter, withInMemoryScrolling, withRouterConfig, withComponentIn
 import { HomeComponent } from './home/home';
 import { AcademyComponent } from './academy/academy';
 import { ShopComponent } from './shop/shop';
+import { ContactsComponent } from './contacts/contacts';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,6 +12,7 @@ export const appConfig: ApplicationConfig = {
         { path: '', component: HomeComponent },
         { path: 'academy', component: AcademyComponent },
         { path: 'shop', component: ShopComponent },
+        { path: 'contacts', component: ContactsComponent },
         { path: '**', redirectTo: '' }
       ],
       withInMemoryScrolling({ 

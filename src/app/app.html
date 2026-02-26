@@ -1,10 +1,19 @@
-<nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+<nav class="navbar is-white is-fixed-top-desktop" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" routerLink="/" (click)="closeNavbar()">
+        <img src="logo.jpg" alt="Logo" style="max-height: 40px; border-radius: 50%; margin-right: 10px;">
         <span class="title is-4 purple-glow" style="font-family: 'Montserrat'; font-weight: 700; letter-spacing: 1px;">DOG STYLE</span>
       </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" (click)="toggleNavbar()" [class.is-active]="isNavbarActive">
+      <div class="is-hidden-desktop is-flex" style="margin-left: auto; align-items: center;">
+        <a class="navbar-item purple-glow" href="tel:+380980866897" style="font-weight: 600;">
+          <i class="fas fa-phone"></i>
+        </a>
+        <a class="navbar-item pink-glow" href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+      </div>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" (click)="toggleNavbar()" [class.is-active]="isNavbarActive" style="margin-left: 0;">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -12,19 +21,60 @@
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu" [class.is-active]="isNavbarActive">
+      <div class="navbar-start">
+        <a class="navbar-item purple-glow is-hidden-touch" href="tel:+380980866897" style="font-weight: 600;">
+          <i class="fas fa-phone mr-2"></i> +380 98 086 68 97
+        </a>
+        <a class="navbar-item pink-glow is-hidden-touch" href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank">
+          <i class="fab fa-instagram fa-lg mr-2"></i>
+        </a>
+      </div>
+
       <div class="navbar-end">
         <a class="navbar-item is-uppercase" routerLink="/" fragment="services" (click)="closeNavbar()" style="font-weight: 500;">Послуги</a>
         <a class="navbar-item is-uppercase" routerLink="/" fragment="prices" (click)="closeNavbar()" style="font-weight: 500;">Прайс</a>
         <a class="navbar-item is-uppercase" routerLink="/academy" routerLinkActive="pink-glow" (click)="closeNavbar()" style="font-weight: 500;">Академія</a>
         <a class="navbar-item is-uppercase" routerLink="/shop" routerLinkActive="pink-glow" (click)="closeNavbar()" style="font-weight: 500;">Маркет</a>
         <a class="navbar-item is-uppercase" routerLink="/" fragment="gallery" (click)="closeNavbar()" style="font-weight: 500;">Галерея</a>
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button hi-tech-button" href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank" style="padding: 0.5rem 1.5rem; font-size: 0.85rem; height: auto;">Записатись</a>
-          </div>
-        </div>
+        <a class="navbar-item is-uppercase" routerLink="/contacts" routerLinkActive="pink-glow" (click)="closeNavbar()" style="font-weight: 500;">Контакти</a>
       </div>
     </div>
+  </div>
+</nav>
+
+<!-- Mobile Bottom Nav -->
+<nav class="navbar is-fixed-bottom is-hidden-desktop mobile-bottom-nav" role="navigation" aria-label="mobile navigation">
+  <div class="container is-flex" style="justify-content: space-around; width: 100%; padding: 5px 0;">
+    <a class="navbar-item is-flex-grow-1 has-text-centered" routerLink="/" fragment="services" (click)="closeNavbar()">
+      <div>
+        <i class="fas fa-cut"></i>
+        <p style="font-size: 0.65rem;">Послуги</p>
+      </div>
+    </a>
+    <a class="navbar-item is-flex-grow-1 has-text-centered" routerLink="/academy" (click)="closeNavbar()">
+      <div>
+        <i class="fas fa-graduation-cap"></i>
+        <p style="font-size: 0.65rem;">Академія</p>
+      </div>
+    </a>
+    <a class="navbar-item is-flex-grow-1 has-text-centered" routerLink="/shop" (click)="closeNavbar()">
+      <div>
+        <i class="fas fa-shopping-bag"></i>
+        <p style="font-size: 0.65rem;">Маркет</p>
+      </div>
+    </a>
+    <a class="navbar-item is-flex-grow-1 has-text-centered" routerLink="/contacts" (click)="closeNavbar()">
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <p style="font-size: 0.65rem;">Контакти</p>
+      </div>
+    </a>
+    <a class="navbar-item is-flex-grow-1 has-text-centered" href="https://www.instagram.com/dog_style25/?hl=ru" target="_blank">
+      <div>
+        <i class="fab fa-instagram"></i>
+        <p style="font-size: 0.65rem;">Instagram</p>
+      </div>
+    </a>
   </div>
 </nav>
 
@@ -33,7 +83,7 @@
 </main>
 
 <!-- Footer -->
-<footer class="footer has-background-white" style="border-top: 1px solid rgba(142, 141, 183, 0.1); background: linear-gradient(180deg, #ffffff 0%, #f9f9fb 100%);">
+<footer class="footer has-background-white" style="border-top: 1px solid rgba(142, 141, 183, 0.1); background: linear-gradient(180deg, #ffffff 0%, #f9f9fb 100%); padding-bottom: 6rem;">
   <div class="container">
     <div class="columns">
       <div class="column is-4">
@@ -64,6 +114,12 @@
     </div>
     <div class="content has-text-centered mt-6 pt-5" style="border-top: 1px solid rgba(0,0,0,0.05);">
       <p style="opacity: 0.6;">© 2026 Dog Style Grooming Salon. Кам'янець-Подільський.</p>
+      <p style="opacity: 0.4; font-size: 0.8rem; margin-top: 5px;">
+        <a href="https://github.com/itkamianets" target="_blank" style="color: inherit; margin-right: 5px;">
+          <i class="fab fa-github fa-sm"></i>
+        </a>
+        designed by Valery
+      </p>
     </div>
   </div>
 </footer>
